@@ -21,7 +21,10 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [CARD_BACK_CONTENT_CHANGE] : (state, action) => { console.log(action.payload); return { ...state, backContent: action.payload } },
+  [CARD_BACK_CONTENT_CHANGE] : (state, action) => {
+    console.log(action.payload)
+    return { ...state, ...action.payload }
+  },
 }
 
 // ------------------------------------
