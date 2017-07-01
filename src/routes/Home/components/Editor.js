@@ -355,4 +355,4 @@ const mapDispatchToProps = {
   updateBackContent,
 }
 
-export default connect(() => {}, mapDispatchToProps)(EditorComponent)
+export default connect(() => ({}), mapDispatchToProps)(EditorComponent)
