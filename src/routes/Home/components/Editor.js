@@ -114,7 +114,7 @@ class EditorComponent extends React.Component {
     const contentState = this.state.editorState.getCurrentContent()
     const block = contentState.getBlockForKey(selection.getStartKey())
     const placeholderKey = block.getEntityAt(selection.getStartOffset())
-    
+
     if (!placeholderKey) { return }
 
     // Get range of the current entity
@@ -193,7 +193,7 @@ class EditorComponent extends React.Component {
       const sel = document.getSelection()
 
       if (sel.focusNode && sel.focusNode.parentNode) {
-        const rect = sel.baseNode.parentNode.getBoundingClientRect()
+        const rect = sel.anchorNode.parentNode.getBoundingClientRect()
 
         // Show trash button
         newState.showRemoveButton = true
@@ -328,7 +328,7 @@ function removeEntities (editorState, selection) {
 
 function extractPlaceholders (editorState) {
   const contentState = editorState.getCurrentContent()
-  
+
   // Iterate through all blocks
   return contentState.getBlocksAsArray().map(contentBlock => {
     const blockData = {
